@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { unstable_cache } from "next/cache";
 export default function Home() {
   return (
-   <div className="text-2xl text-rose-700">
-    <Button variant="default">Click me</Button> 
-   
-    hello world
-   </div>
+    <div className="">
+      <Button>Click me</Button>
+      <Button variant="destructive">des</Button>
+      <Button variant="ghost">ghost</Button>
+      <Button variant="secondary">secondary</Button>
+      <Button variant="muted">muted</Button>
+      <Button variant="teritary">teritrary</Button>
+    </div>
   );
 }
