@@ -7,10 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import Link from "next/link";
-import { FaGithub } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
 import {
   Form,
   FormControl,
@@ -19,9 +15,13 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
+import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
+import { useForm } from "react-hook-form";
+import { FaGithub } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { z } from "zod";
 
 const formSchema = z.object({
   name: z.string().trim().min(1, "Required"),
@@ -95,7 +95,7 @@ export const SignUpCard = () => {
                 </FormItem>
               )}
             />
-              <FormField
+            <FormField
               name="password"
               control={form.control}
               render={({ field }) => (
@@ -145,9 +145,12 @@ export const SignUpCard = () => {
       </div>
       <CardContent className="p-7 flex items-center justify-center">
         <p>
-          Already have an account?{" "} <Link href="/sign-in"><span className="text-blue-700">Sign In</span></Link>
-          </p> 
-        </CardContent>
+          Already have an account?{" "}
+          <Link href="/sign-in">
+            <span className="text-blue-700">Sign In</span>
+          </Link>
+        </p>
+      </CardContent>
     </Card>
   );
 };

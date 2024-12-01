@@ -33,8 +33,8 @@ export const DottedSeprator = ({
           height: isHorizontal ? height : "100%",
           backgroundImage: `radial-gradient(circle, ${color} 25%, transparent 25%)`,
           backgroundSize: isHorizontal
-            ? `${Number.parseInt(dotSize) + Number.parseInt(dotSize)}px ${height}`
-            : `${height} ${Number.parseInt(dotSize) + Number.parseInt(dotSize)}px`,
+            ? `${Number.parseInt(dotSize) + Number.parseInt(gapSize)}px ${height}`
+            : `${height} ${Number.parseInt(dotSize) + Number.parseInt(gapSize)}px`,
           backgroundRepeat: isHorizontal ? "repeat-x" : "repeat-y",
           backgroundPosition: "center",
         }}

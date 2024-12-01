@@ -12,7 +12,7 @@ interface AuthLayoutProps {
 
 const AuthLayout = ({ children }: AuthLayoutProps) => {
   const pathName = usePathname();
-  
+
   useEffect(() => {
     console.log("Current path:", pathName); // Debugging line
   }, [pathName]);
@@ -23,7 +23,7 @@ const AuthLayout = ({ children }: AuthLayoutProps) => {
       <div className=" max-w-screen-2xl mx-auto p-4">
         <nav className="flex justify-between items-center ">
           <Image src="/logo.svg" width={152} height={56} alt="logo" />
-          <Button   variant="secondary">
+          <Button variant="secondary">
             <Link href={isSignIn ? "/sign-up" : "/sign-in"}>
               {isSignIn ? "Sign Up" : "Login"}
             </Link>

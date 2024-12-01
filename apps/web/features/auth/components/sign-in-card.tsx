@@ -18,7 +18,7 @@ import { FcGoogle } from "react-icons/fc";
 import { z } from "zod";
 
 const formSchema = z.object({
-  email: z.string().email(), 
+  email: z.string().email(),
   password: z.string().min(1, "Required"),
 });
 
@@ -33,7 +33,7 @@ export const SignInCard = () => {
 
   const onSubmit = (data: z.infer<typeof formSchema>) => {
     console.log(data);
-  }
+  };
   return (
     <Card className="w-full h-full md:w-[487px] border-none shadow-none">
       <CardHeader className="flex items-center  justify-center text-center p-7">
@@ -57,7 +57,7 @@ export const SignInCard = () => {
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage/>
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -73,7 +73,7 @@ export const SignInCard = () => {
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage/>
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -111,9 +111,12 @@ export const SignInCard = () => {
       </div>
       <CardContent className="p-7 flex items-center justify-center">
         <p>
-          Don&apos;t have an account?{" "} <Link href="/sign-up"><span className="text-blue-700">Sign Up</span></Link>
-          </p> 
-        </CardContent>
+          Don&apos;t have an account?{" "}
+          <Link href="/sign-up">
+            <span className="text-blue-700">Sign Up</span>
+          </Link>
+        </p>
+      </CardContent>
     </Card>
   );
 };
