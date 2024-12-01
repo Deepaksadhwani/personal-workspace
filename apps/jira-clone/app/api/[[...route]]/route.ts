@@ -8,8 +8,8 @@ app.get("/hello", (c) => {
 });
 
 app.get("/hello/:name", (c) => {
-    // const name = c.req.param("name"); // or
-    const {name} = c.req.param()
-    return c.json({ message: `Hello ${name}!` });
+  // const name = c.req.param("name"); // or
+  const { name } = c.req.param();
+  return c.json({ message: `Hello ${name}!` });
 });
 export const GET = handle(app);

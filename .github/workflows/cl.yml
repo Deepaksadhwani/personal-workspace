@@ -11,6 +11,10 @@ on:
 jobs:
   lint-and-build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        app: [apps/jira-clone] #  example to add: [apps/web, apps/admin] Single app for now; add more later
+      fail-fast: false
 
     steps:
       # Checkout the repository
@@ -32,10 +36,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      # Run linting
+      # Run linting for the app
       - name: Run lint
+        working-directory: ${{ matrix.app }}
         run: pnpm run lint
 
-      # Run build
+      # Run build for the app
       - name: Run build
+        working-directory: ${{ matrix.app }}
         run: pnpm run build

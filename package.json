@@ -1,5 +1,5 @@
 {
-  "name": "jira clone",
+  "name": "personal-workspace",
   "private": true,
   "scripts": {
     "build": "turbo build",
