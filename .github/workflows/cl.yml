@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        app: [apps/jira-clone] #  example to add: [apps/web, apps/admin] Single app for now; add more later
+        app: [apps/jira-clone] #  example to add: [apps/jira-clone, apps/admin] Single app for now; add more later
       fail-fast: false
 
     steps:
@@ -21,16 +21,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Set up pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8 # specify the pnpm version
+
       # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 22 # Specify your Node.js version
-          cache: pnpm
-
-      # Install pnpm
-      - name: Install pnpm
-        run: npm install -g pnpm
+          cache: 'pnpm'
 
       # Install dependencies
       - name: Install dependencies
