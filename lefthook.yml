@@ -2,3 +2,25 @@ commit-msg:
   commands:
     commitlint:
       run: "pnpm commitlint --edit $1"
+      stage_fixed: true
+
+pre-commit:
+  commands:
+    pnpm_install:
+      run: pnpm install
+    pnpm_build:
+      run: pnpm run build
+    check:
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
+      run: pnpm biome check --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
+      stage_fixed: true
+
+pre-push:
+  commands:
+    pnpm_install:
+      run: pnpm install --frozen-lockfile
+    pnpm_build:
+      run: pnpm run build
+    check:
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
+      run: pnpm biome check --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {push_files}
