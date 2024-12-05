@@ -5,10 +5,17 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "lint:fix": "biome check . --write"
+    "lint:fix": "biome check . --write",
+    "commitlint": "commitlint --edit"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@commitlint/prompt-cli": "^19.6.0",
+    "@commitlint/types": "^19.5.0",
+    "conventional-changelog-atom": "^5.0.0",
+    "lefthook": "^1.8.5",
     "prettier": "^3.2.5",
     "turbo": "^2.3.0",
     "typescript": "5.5.4"
