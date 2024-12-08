@@ -1,13 +1,10 @@
-import { Button } from "@/components/ui/button";
+import Button from "personal-workspace/ui/button";
+import Index from "personal-workspace/ui/index";
 export default function Home() {
   return (
-    <div className="">
-      <Button>Click me</Button>
-      <Button variant="destructive">des</Button>
-      <Button variant="ghost">ghost</Button>
-      <Button variant="secondary">secondary</Button>
-      <Button variant="muted">muted</Button>
-      <Button variant="teritary">teritrary</Button>
+    <div>
+      <Button />
+      <Index />
     </div>
   );
 }

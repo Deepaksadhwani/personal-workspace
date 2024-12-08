@@ -4,11 +4,45 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
+    "clean": "git clean -xdf node_modules",
+    "clean:workspaces": "turbo run clean",
+    "commitlint": "commitlint --edit",
     "lint": "turbo lint",
     "lint:fix": "biome check . --write",
-    "commitlint": "commitlint --edit",
-    "clean": "git clean -xdf node_modules",
-    "clean:workspaces": "turbo run clean"
+    "lint:ws": "pnpm dlx sherif@latest"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
+    "@radix-ui/react-avatar": "^1.1.1",
+    "@radix-ui/react-checkbox": "^1.1.2",
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-dropdown-menu": "^2.1.2",
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-popover": "^1.1.2",
+    "@radix-ui/react-scroll-area": "^1.2.1",
+    "@radix-ui/react-select": "^2.1.2",
+    "@radix-ui/react-separator": "^1.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tabs": "^1.1.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "hono": "^4.6.13",
+    "lucide-react": "^0.468.0",
+    "next": "15.0.4",
+    "next-themes": "^0.4.4",
+    "personal-workspace/ui": "workspace:*",
+    "react": "19.0.0",
+    "react-day-picker": "^9.4.1",
+    "react-dom": "19.0.0",
+    "react-hook-form": "^7.54.0",
+    "react-icons": "^5.4.0",
+    "recharts": "^2.14.1",
+    "sonner": "^1.7.1",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7",
+    "vaul": "^1.1.1",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
@@ -16,14 +50,20 @@
     "@commitlint/config-conventional": "^19.6.0",
     "@commitlint/prompt-cli": "^19.6.0",
     "@commitlint/types": "^19.5.0",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
     "conventional-changelog-atom": "^5.0.0",
-    "lefthook": "^1.8.5",
-    "prettier": "^3.2.5",
-    "turbo": "^2.3.0",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "14.2.14",
+    "lefthook": "^1.9.0",
+    "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
+    "tailwindcss": "^3.4.16",
+    "turbo": "^2.3.3",
     "typescript": "5.5.4"
   },
   "packageManager": "pnpm@8.15.6",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }
