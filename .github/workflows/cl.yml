@@ -6,7 +6,7 @@ on:
       - main
   pull_request:
     branches:
-      - main
+      - ["*"]
 
 jobs:
   lint-and-build:
@@ -26,13 +26,13 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 8 # specify the pnpm version
-         
+
       # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 22 # Specify your Node.js version
-          
+
       # Install dependencies
       - name: Install dependencies
         run: pnpm install
