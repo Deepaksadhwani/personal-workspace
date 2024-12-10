@@ -6,34 +6,35 @@ on:
       - main
   pull_request:
     branches:
-      - ["*"]
+      - "*"
 
 jobs:
   lint-and-build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        app: [apps/jira-clone] #  example to add: [apps/jira-clone, apps/admin] Single app for now; add more later
-      fail-fast: false
+        app: [apps/jira-clone]  # Example to add more apps later, e.g., [apps/jira-clone, apps/admin]
+
+    fail-fast: false
 
     steps:
       # Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Set up Node.js (required for using pnpm with Node)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22  # Specify your Node.js version
+
       # Set up pnpm
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8 # specify the pnpm version
+          version: 8  # specify the pnpm version
 
-      # Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 22 # Specify your Node.js version
-
-      # Install dependencies
+      # Install dependencies using pnpm
       - name: Install dependencies
         run: pnpm install
 
