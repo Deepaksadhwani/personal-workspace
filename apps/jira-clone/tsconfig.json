@@ -1,5 +1,5 @@
 {
-  "extends": "../../packages/typescript-config/nextjs.json",
+  "extends": "personal-workspace/typescript-config/nextjs.json",
   "compilerOptions": {
     "plugins": [
       {
@@ -8,10 +8,16 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "personal-workspace/ui/*": ["../../packages/ui/src/*"] // for solve import path form packages/ui/src.
+      "@/*": ["./*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "next.config.mjs",
+    "postcss.config.mjs",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }

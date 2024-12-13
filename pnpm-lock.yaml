@@ -156,6 +156,13 @@ importers:
       personal-workspace/ui:
         specifier: workspace:*
         version: link:../../packages/ui
+    devDependencies:
+      personal-workspace/eslint-config:
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      personal-workspace/typescript-config:
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
 
   packages/eslint-config:
     devDependencies:

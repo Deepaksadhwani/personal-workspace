@@ -10,5 +10,9 @@
   },
   "dependencies": {
     "personal-workspace/ui": "workspace:*"
+  },
+  "devDependencies": {
+    "personal-workspace/eslint-config": "workspace:*",
+    "personal-workspace/typescript-config": "workspace:*"
   }
 }
