@@ -5,11 +5,18 @@ A full-stack Jira clone built with modern technologies.
 ## Technologies Used
 
 - **Frontend**: Next.js with Tailwind CSS, ShadCN UI
-- **API Routing**: Hono.js
+- **State Management**: TanStack Query
+- **API Routing**: Hono.js 
 
 ## Features
 
-- User Authentication (Login/Register) with ShadCN UI components
+- User Authentication Implementation:
+  - Login/Register forms with ShadCN UI components
+  - TanStack Query mutations for API calls
+  - QueryProvider setup for global query management
+  - Backend API integration with auth endpoints:
+    - POST /api/auth/login
+    - POST /api/auth/register
 
 ## Getting Started
 
