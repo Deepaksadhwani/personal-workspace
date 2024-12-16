@@ -11,18 +11,30 @@ A full-stack Jira clone built with modern technologies.
 
 ## Features  
 
-- **User Authentication Implementation**:  
-  - Login/Register forms with Shadcn UI components  
-  - TanStack Query mutations for API calls  
-  - QueryProvider setup for global query management  
-  - Appwrite Integration:  
-    - Email/Password authentication  
-    - Session management with secure cookies  
-    - User creation and login functionality  
-  - Backend API integration with auth endpoints:  
-    - `POST /api/auth/login` - Authenticates users via Appwrite  
-    - `POST /api/auth/register` - Creates new users in Appwrite  
-    - `POST /api/auth/logout` - Handles user session termination  
+- **Authentication System**:  
+  - **Client-Side Features**:
+    - Protected routes with automatic redirection
+    - Custom hooks for authentication:
+      - `useCurrent()` - Fetch current user status
+      - `useLogout()` - Handle user logout
+    - TanStack Query integration for state management
+    - Automatic query invalidation on logout
+
+  - **Server-Side Features**:
+    - Secure session management with HTTP-only cookies
+    - Session middleware for protected routes
+    - Type-safe request validation using Hono
+    - Endpoints:
+      - `GET /api/auth/current` - Get current user
+      - `POST /api/auth/login` - User login
+      - `POST /api/auth/register` - User registration
+      - `POST /api/auth/logout` - User logout
+
+  - **Security Features**:
+    - HTTP-only cookies for session storage
+    - Secure cookie settings with strict same-site policy
+    - 30-day session duration
+    - Type-safe API implementations
 
 ## Getting Started  
 
@@ -57,4 +69,4 @@ A full-stack Jira clone built with modern technologies.
 
 3. **Access the Application**:  
    - Once the server is running, open your browser and navigate to:  
-     [http://localhost:7000](http://localhost:7000).  
+     [http://localhost:7000](http://localhost:7000).

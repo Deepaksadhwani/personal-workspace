@@ -3,11 +3,12 @@ import {
   loginValidator,
   registerValidator,
 } from "@/features/auth/server/middleware";
+import { sessionMiddleware } from "@/lib/session-middleware";
 import { Hono } from "hono";
 import { deleteCookie, setCookie } from "hono/cookie";
 import {
-  createAppWriteUser,
-  loginAppwriteUser,
+  createAppWriteAdminUser,
+  loginAppwriteAdminUser,
 } from "personal-workspace/ui/src/libs/appwrite";
 //Hono RPC
 //use chaining to leverage Hono RPC benefits, automatic type inference, and validation
@@ -19,9 +20,14 @@ const appWriteValidationData = {
 };
 
 const app = new Hono()
+  .get("/current", sessionMiddleware, (c) => {
+    const user = c.get("user");
+    return c.json({ data: user });
+  })
   .post("/login", loginValidator, async (c) => {
+    // const {email, password} = await c.req.json() // regular way to get the request body but does not give type safety
     const { email, password } = c.req.valid("json"); // valid("") should match zValidator in middleware, give us type safety
-    const { session } = await loginAppwriteUser(appWriteValidationData, {
+    const { session } = await loginAppwriteAdminUser(appWriteValidationData, {
       email,
       password,
     });
@@ -36,12 +42,14 @@ const app = new Hono()
   })
   .post("/register", registerValidator, async (c) => {
     const { name, email, password } = c.req.valid("json");
-    const { user, session } = await createAppWriteUser(appWriteValidationData, {
-      email,
-      password,
-      name,
-    });
-
+    const { user, session } = await createAppWriteAdminUser(
+      appWriteValidationData,
+      {
+        email,
+        password,
+        name,
+      },
+    );
     setCookie(c, AUTH_COOKIE, session.secret, {
       path: "/",
       httpOnly: true,
@@ -52,10 +60,11 @@ const app = new Hono()
 
     return c.json({ data: user });
   })
-  .post("/logout", async (c) => {
+  .post("/logout", sessionMiddleware, async (c) => {
+    const account = c.get("account");
+
     deleteCookie(c, AUTH_COOKIE);
+    await account.deleteSession("current");
     return c.json({ success: true });
   });
 export default app;
-
-// const {email, password} = await c.req.json() // regular way to get the request body but does not give type safety

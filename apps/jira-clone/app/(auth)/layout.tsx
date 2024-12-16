@@ -13,10 +13,6 @@ interface AuthLayoutProps {
 const AuthLayout = ({ children }: AuthLayoutProps) => {
   const pathName = usePathname();
 
-  useEffect(() => {
-    console.log("Current path:", pathName); // Debugging line
-  }, [pathName]);
-
   const isSignIn = pathName === "/sign-in";
   return (
     <main className="bg-neutral-100 min-h-screen">
