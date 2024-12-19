@@ -14,11 +14,20 @@ A full-stack Jira clone built with modern technologies.
 - **Authentication System**:  
   - **Client-Side Features**:
     - Protected routes with automatic redirection
+    - Complete authentication UI:
+      - Sign In card with email/password login
+      - Sign Up card with name, email, password registration
+      - User avatar button with dropdown menu
+      - Social login placeholders (Google, GitHub)
     - Custom hooks for authentication:
       - `useCurrent()` - Fetch current user status
+      - `useLogin()` - Handle user login
       - `useLogout()` - Handle user logout
+      - `useRegister()` - Handle user registration
+    - Form validation using Zod schemas
     - TanStack Query integration for state management
-    - Automatic query invalidation on logout
+    - Automatic query invalidation on auth state changes
+    - Responsive design with mobile support
 
   - **Server-Side Features**:
     - Secure session management with HTTP-only cookies
