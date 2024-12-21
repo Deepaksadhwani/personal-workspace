@@ -45,6 +45,25 @@ A full-stack Jira clone built with modern technologies.
     - 30-day session duration
     - Type-safe API implementations
 
+- **Dashboard Layout Implementation**:
+  - **Components Structure**:
+    - Responsive Navigation System:
+      - Desktop sidebar with permanent display
+      - Mobile-friendly collapsible sidebar
+      - Dynamic navigation links with active states
+    - Main Layout Components:
+      - `Navbar` - Top navigation with user controls
+      - `Sidebar` - Main navigation menu
+      - `MobileSidebar` - Responsive drawer for mobile view
+      - `Navigation` - Reusable navigation links component
+    
+  - **Current Features**:
+    - Responsive design with mobile-first approach
+    - Sheet component for mobile navigation
+    - Auto-closing mobile menu on route changes
+    - SVG icons integration using Lucide React
+
+
 ## Getting Started  
 
 1. Clone the repository:  
