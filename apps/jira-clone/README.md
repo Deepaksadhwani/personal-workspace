@@ -96,6 +96,18 @@ A full-stack Jira clone built with modern technologies.
     - Responsive form design with Shadcn UI components
     - Real-time image preview
     - Custom file input with avatar fallback
+    - Workspace switcher component with:
+      - List of available workspaces
+      - Custom workspace avatars
+      - Add workspace button
+      - Dropdown selection interface
+  - **Components**:
+    - `WorkspaceAvatar`: Displays workspace image or fallback initial
+    - `WorkspaceSwitcher`: Handles workspace selection and navigation
+  - **API Integration**:
+    - Custom hook `useGetWorkSpaces` for fetching workspace data
+    - Real-time workspace list updates
+    - Efficient data caching with TanStack Query
   - **Server-Side Features**:
     - Secure workspace creation endpoint
     - Image processing and storage
