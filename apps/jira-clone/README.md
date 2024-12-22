@@ -28,6 +28,10 @@ A full-stack Jira clone built with modern technologies.
     - TanStack Query integration for state management
     - Automatic query invalidation on auth state changes
     - Responsive design with mobile support
+    - Toast notifications for:
+      - Successful login/registration
+      - Authentication errors
+      - Session expiration alerts
 
   - **Server-Side Features**:
     - Secure session management with HTTP-only cookies
@@ -63,6 +67,20 @@ A full-stack Jira clone built with modern technologies.
     - Auto-closing mobile menu on route changes
     - SVG icons integration using Lucide React
 
+- **Workspace Management**:
+  - **Client-Side Features**:
+    - Create new workspaces with validation
+    - Toast notifications for:
+      - Successful workspace creation
+      - Workspace creation errors
+    - Form validation using Zod schemas
+    - Responsive form design with Shadcn UI components
+  
+  - **Server-Side Features**:
+    - Secure workspace creation endpoint
+    - Type-safe request validation
+    - Database integration with Appwrite
+    - Protected routes with session middleware
 
 ## Getting Started  
 

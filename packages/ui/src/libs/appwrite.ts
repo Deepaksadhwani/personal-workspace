@@ -1,5 +1,5 @@
 import "server-only";
-import { Account, Client, Databases, ID, Storage, Users } from "node-appwrite";
+import { Account, Client, Databases, ID, Storage } from "node-appwrite";
 import type {
   AppwriteAdminClientTypes,
   AppwriteClientTypes,
