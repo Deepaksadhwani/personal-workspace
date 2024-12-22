@@ -1,18 +1,37 @@
-# Jira Clone  
+# Jira Clone
 
-A full-stack Jira clone built with modern technologies.  
+A full-stack Jira clone built with modern technologies.
 
-## Technologies Used  
+## Technologies Used
 
-- **Frontend**: Next.js with Tailwind CSS, Shadcn UI  
-- **State Management**: TanStack Query  
-- **API Routing**: Hono.js  
-- **Backend Services**: Appwrite  
+- **Frontend**: Next.js with Tailwind CSS, Shadcn UI
+- **State Management**: TanStack Query
+- **API Routing**: Hono.js
+- **Backend Services**: Appwrite
 
-## Features  
+## Features
 
-- **Authentication System**:  
+- **Core Features**:
+
+  - **Toast Notification System**:
+
+    - Integrated success/error feedback for all API operations
+    - Consistent styling with Shadcn UI
+    - Auto-dismissible notifications
+    - Support across all application features
+
+  - **File Handling**:
+    - Image upload support
+    - Base64 image conversion
+    - File type validation
+    - Size restrictions (max 1MB)
+    - Supported formats: JPG, PNG, GIF, SVG, JPEG
+    - Secure storage using Appwrite Buckets
+
+- **Authentication System**:
+
   - **Client-Side Features**:
+
     - Protected routes with automatic redirection
     - Complete authentication UI:
       - Sign In card with email/password login
@@ -34,6 +53,7 @@ A full-stack Jira clone built with modern technologies.
       - Session expiration alerts
 
   - **Server-Side Features**:
+
     - Secure session management with HTTP-only cookies
     - Session middleware for protected routes
     - Type-safe request validation using Hono
@@ -50,6 +70,7 @@ A full-stack Jira clone built with modern technologies.
     - Type-safe API implementations
 
 - **Dashboard Layout Implementation**:
+
   - **Components Structure**:
     - Responsive Navigation System:
       - Desktop sidebar with permanent display
@@ -60,7 +81,6 @@ A full-stack Jira clone built with modern technologies.
       - `Sidebar` - Main navigation menu
       - `MobileSidebar` - Responsive drawer for mobile view
       - `Navigation` - Reusable navigation links component
-    
   - **Current Features**:
     - Responsive design with mobile-first approach
     - Sheet component for mobile navigation
@@ -68,51 +88,59 @@ A full-stack Jira clone built with modern technologies.
     - SVG icons integration using Lucide React
 
 - **Workspace Management**:
+
   - **Client-Side Features**:
-    - Create new workspaces with validation
-    - Toast notifications for:
-      - Successful workspace creation
-      - Workspace creation errors
+    - Create workspaces with name and custom icon
+    - Image preview and upload functionality
     - Form validation using Zod schemas
     - Responsive form design with Shadcn UI components
-  
+    - Real-time image preview
+    - Custom file input with avatar fallback
   - **Server-Side Features**:
     - Secure workspace creation endpoint
+    - Image processing and storage
     - Type-safe request validation
-    - Database integration with Appwrite
     - Protected routes with session middleware
+    - Appwrite integration for:
+      - Database document creation
+      - File storage and retrieval
+      - Base64 image conversion
 
-## Getting Started  
+## Getting Started
 
-1. Clone the repository:  
+1. Clone the repository:
    ```bash
    git clone https://github.com/Deepaksadhwani/personal-workspace.git
-   ```  
-2. Install dependencies:  
+   ```
+2. Install dependencies:
+
    ```bash
    pnpm install
-   ```  
+   ```
 
-3. Navigate to the Jira Clone application:  
+3. Navigate to the Jira Clone application:
+
    ```bash
    cd apps/jira-clone
-   ```  
+   ```
 
-3. Set up Appwrite:  
-   - Create an Appwrite project  
-   - Configure environment variables  
+4. Set up Appwrite:
+   - Create an Appwrite project
+   - Configure environment variables
 
-## Development  
+## Development
 
-1. **Development Server Configuration**:  
-   - The server is pre-configured to run on **port 7000**.  
+1. **Development Server Configuration**:
 
-2. **Starting the Development Server**:  
-   - Use the following command to start the project:  
+   - The server is pre-configured to run on **port 7000**.
+
+2. **Starting the Development Server**:
+
+   - Use the following command to start the project:
      ```bash
-     pnpm run dev 
-     ```  
+     pnpm run dev
+     ```
 
-3. **Access the Application**:  
+3. **Access the Application**:
    - Once the server is running, open your browser and navigate to:  
      [http://localhost:7000](http://localhost:7000).
