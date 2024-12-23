@@ -11,23 +11,6 @@ A full-stack Jira clone built with modern technologies.
 
 ## Features
 
-- **Core Features**:
-
-  - **Toast Notification System**:
-
-    - Integrated success/error feedback for all API operations
-    - Consistent styling with Shadcn UI
-    - Auto-dismissible notifications
-    - Support across all application features
-
-  - **File Handling**:
-    - Image upload support
-    - Base64 image conversion
-    - File type validation
-    - Size restrictions (max 1MB)
-    - Supported formats: JPG, PNG, GIF, SVG, JPEG
-    - Secure storage using Appwrite Buckets
-
 - **Authentication System**:
 
   - **Client-Side Features**:
@@ -96,6 +79,7 @@ A full-stack Jira clone built with modern technologies.
     - Responsive form design with Shadcn UI components
     - Real-time image preview
     - Custom file input with avatar fallback
+    - Invite Code Generation
     - Workspace switcher component with:
       - List of available workspaces
       - Custom workspace avatars
@@ -113,10 +97,20 @@ A full-stack Jira clone built with modern technologies.
     - Image processing and storage
     - Type-safe request validation
     - Protected routes with session middleware
+    - Workspace API Routes:
+      - `GET /api/workspaces` - Fetch user's workspaces based on membership
+      - `POST /api/workspaces` - Create new workspace with member role
+    - Member Management:
+      - Automatic admin role assignment for workspace creator
+      - Member-workspace relationship tracking
+      - Workspace access control based on membership
     - Appwrite integration for:
       - Database document creation
       - File storage and retrieval
       - Base64 image conversion
+      - Member role management
+      - Filtered workspace queries by membership
+      - Workspace ordering by creation date
 
 ## Getting Started
 
