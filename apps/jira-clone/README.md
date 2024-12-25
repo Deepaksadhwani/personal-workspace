@@ -76,10 +76,10 @@ A full-stack Jira clone built with modern technologies.
     - Create workspaces with name and custom icon
     - Image preview and upload functionality
     - Form validation using Zod schemas
-    - Responsive form design with Shadcn UI components
+    - Responsive modal system (desktop/mobile support)
     - Real-time image preview
     - Custom file input with avatar fallback
-    - Invite Code Generation
+    - URL-based modal state management using nuqs
     - Workspace switcher component with:
       - List of available workspaces
       - Custom workspace avatars
@@ -88,10 +88,21 @@ A full-stack Jira clone built with modern technologies.
   - **Components**:
     - `WorkspaceAvatar`: Displays workspace image or fallback initial
     - `WorkspaceSwitcher`: Handles workspace selection and navigation
-  - **API Integration**:
-    - Custom hook `useGetWorkSpaces` for fetching workspace data
-    - Real-time workspace list updates
-    - Efficient data caching with TanStack Query
+    - `ResponsiveModal`: Adaptive modal that switches between dialog and drawer
+    - `CreateWorkspaceModal`: Modal for workspace creation
+  - **Hooks**:
+    - `useCreateWorkspaceModal`: Manages modal state via URL parameters
+    - `useWorkspaceId`: Manages current workspace selection
+    - `useGetWorkSpaces`: Fetches workspace data
+  - **State Management**:
+    - URL-based state management for modals using nuqs
+    - Query invalidation on workspace changes
+    - Automatic workspace routing
+  - **Server Actions**:
+    - Secure workspace fetching with session validation
+    - Member-workspace relationship queries
+    - Automatic workspace redirection logic
+
   - **Server-Side Features**:
     - Secure workspace creation endpoint
     - Image processing and storage

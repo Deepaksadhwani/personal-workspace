@@ -18,6 +18,7 @@ import { createWorkspaceSchema } from "@/features/workspaces/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ImageIcon } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import type { z } from "zod";
@@ -29,7 +30,7 @@ interface CreateWorkspaceFormProps {
 export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const { mutate, isPending } = useCreateWorkspace();
-
+  const router = useRouter();
   const form = useForm<z.infer<typeof createWorkspaceSchema>>({
     resolver: zodResolver(createWorkspaceSchema),
     defaultValues: {
@@ -52,9 +53,9 @@ export const CreateWorkspaceForm = ({ onCancel }: CreateWorkspaceFormProps) => {
     mutate(
       { form: finalValues },
       {
-        onSuccess: () => {
+        onSuccess: ({ data }) => {
           form.reset();
-          // TODO: Redirect to the workspace
+          router.push(`/workspaces/${data.$id}`);
         },
       },
     );
