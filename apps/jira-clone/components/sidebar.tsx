@@ -3,6 +3,7 @@ import { Navigation } from "@/components/navigation";
 import WorkspaceSwitcher from "@/components/workspace-switcher";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export const Sidebar = () => {
   return (
@@ -11,7 +12,11 @@ export const Sidebar = () => {
         <Image src="/logo.svg" alt="logo" width={164} height={48} />
       </Link>
       <DottedSeprator className="my-4" />
-      <WorkspaceSwitcher />
+      <Suspense>
+        {" "}
+        <WorkspaceSwitcher />
+      </Suspense>
+
       <DottedSeprator className="my-4" />
       <Navigation />
     </aside>
