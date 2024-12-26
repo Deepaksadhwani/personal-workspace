@@ -123,6 +123,42 @@ A full-stack Jira clone built with modern technologies.
       - Filtered workspace queries by membership
       - Workspace ordering by creation date
 
+  - **New Features**:
+    - Create workspaces through a dedicated page route
+    - Standalone layout with navigation header
+    - Protected routes with authentication checks
+    - Workspace detail pages with dynamic routing
+    - User button integration in header
+    - Logo and branding elements
+  
+  - **Updated Components**:
+    - Enhanced workspace creation form with:
+      - Image upload preview
+      - Workspace name validation
+      - Responsive layout
+      - Loading states
+      - Cancel/Submit actions
+    - New standalone layout component
+    - Workspace detail page structure
+
+  - **Workspace Editing Features**:
+    - Edit existing workspaces with name and icon updates
+    - Real-time image preview and removal
+    - Secure route protection for workspace editing
+    - Components:
+      - `EditWorkspaceForm`: Standalone form for workspace editing
+      - Enhanced image handling with preview and remove options
+    - API Integration:
+      - `PATCH /api/workspaces/:workspaceId` endpoint
+      - Role-based access control (Admin only)
+      - Automatic query invalidation on updates
+    - UX Features:
+      - Back navigation with route history
+      - Loading states during updates
+      - Success/Error notifications
+      - Image validation and preview
+      - Responsive layout adaptation
+
 ## Getting Started
 
 1. Clone the repository:

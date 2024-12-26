@@ -11,6 +11,7 @@ const routes = app
 // These handlers will process all GET/POST requests to /api/*
 export const GET = handle(app);
 export const POST = handle(app);
+export const PATCH = handle(app);
 
 // Export app type for client-side type safety
 export type AppType = typeof routes;
