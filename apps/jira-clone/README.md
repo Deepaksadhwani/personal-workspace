@@ -158,6 +158,20 @@ A full-stack Jira clone built with modern technologies.
       - Success/Error notifications
       - Image validation and preview
       - Responsive layout adaptation
+    - Delete workspace functionality with:
+      - Confirmation dialog before deletion
+      - Role-based access control (Admin only)
+      - Automatic cleanup of workspace data
+      - Redirection after successful deletion
+    - Common Components:
+      - `useConfirm` hook for reusable confirmation dialogs
+      - Responsive confirmation UI (desktop/mobile)
+      - Customizable dialog content and button variants
+    - UX Features:
+      - Danger zone section for destructive actions
+      - Clear warning messages
+      - Loading states during deletion
+      - Success/Error notifications
 
 ## Getting Started
 
