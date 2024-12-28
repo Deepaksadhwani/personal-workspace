@@ -98,7 +98,7 @@ A full-stack Jira clone built with modern technologies.
     - URL-based state management for modals using nuqs
     - Query invalidation on workspace changes
     - Automatic workspace routing
-  - **Server Actions**:
+  - **Server Queries**:
     - Secure workspace fetching with session validation
     - Member-workspace relationship queries
     - Automatic workspace redirection logic

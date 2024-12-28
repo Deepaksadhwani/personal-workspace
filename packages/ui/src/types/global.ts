@@ -21,6 +21,13 @@ export type AppwriteClientTypes = Omit<AppwriteAdminClientTypes, "apiKey"> & {
   session: string;
 };
 
+export type createSessionClientTypes = Omit<
+  AppwriteAdminClientTypes,
+  "apiKey"
+> & {
+  CookieName: string;
+};
+
 // addtinonal context for hono for generate client appwrite
 export type AdditionalContext = {
   Variables: {
