@@ -5,7 +5,7 @@ import { AUTH_COOKIE } from "@/features/auth/constants";
 import { getMember } from "@/features/members/utils";
 import type { Workspace } from "@/features/workspaces/types";
 import { cookies } from "next/headers";
-import { Account, Databases, Query } from "node-appwrite";
+import { Query } from "node-appwrite";
 import { createAppwriteClient } from "personal-workspace/ui/src/libs/appwrite";
 
 export const getWorkspaces = async () => {
@@ -13,16 +13,12 @@ export const getWorkspaces = async () => {
   if (!session) return { documents: [], total: 0 };
 
   try {
-    const { client } = await createAppwriteClient({
+    const { databases, user } = await createAppwriteClient({
       endpoint: process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || "",
       projectId: process.env.NEXT_PUBLIC_APPWRITE_PROJECT || "",
       session: session.value,
     });
 
-    client.setSession(session.value);
-    const databases = new Databases(client);
-    const account = new Account(client);
-    const user = await account.get();
     const members = await databases.listDocuments(DATABASE_ID, MEMBERS_ID, [
       Query.equal("userId", user.$id),
     ]);
@@ -53,16 +49,11 @@ export const getWorkspace = async ({ workspaceId }: GetWorkspaceProps) => {
   if (!session) return null;
 
   try {
-    const { client } = await createAppwriteClient({
+    const { databases, user } = await createAppwriteClient({
       endpoint: process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || "",
       projectId: process.env.NEXT_PUBLIC_APPWRITE_PROJECT || "",
       session: session.value,
     });
-
-    client.setSession(session.value);
-    const databases = new Databases(client);
-    const account = new Account(client);
-    const user = await account.get();
 
     const member = await getMember({
       databases,

@@ -2,7 +2,6 @@
 
 import { AUTH_COOKIE } from "@/features/auth/constants";
 import { cookies } from "next/headers";
-import { Account } from "node-appwrite";
 import { createAppwriteClient } from "personal-workspace/ui/src/libs/appwrite";
 
 export const getCurrent = async () => {
@@ -10,15 +9,13 @@ export const getCurrent = async () => {
   if (!session) return null;
 
   try {
-    const { client } = await createAppwriteClient({
+    const { user } = await createAppwriteClient({
       endpoint: process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || "",
       projectId: process.env.NEXT_PUBLIC_APPWRITE_PROJECT || "",
       session: session.value,
     });
 
-    client.setSession(session.value);
-    const account = new Account(client);
-    return await account.get();
+    return user;
   } catch (error) {
     return null;
   }

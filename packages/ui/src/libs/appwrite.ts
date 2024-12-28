@@ -1,9 +1,11 @@
 import "server-only";
+
 import { Account, Client, Databases, ID, Storage } from "node-appwrite";
 import type {
   AppwriteAdminClientTypes,
   AppwriteClientTypes,
   LoginUserAppwriteTypes,
+  createSessionClientTypes,
   createUserAppwriteTypes,
 } from "../types/global";
 
@@ -55,7 +57,8 @@ export async function createAppwriteClient({
   const client = new Client();
   client.setEndpoint(endpoint || "").setProject(projectId || "");
 
-  client.setSession(session);
+  if (session) client.setSession(session);
+
   const account = new Account(client);
   const storage = new Storage(client);
   const databases = new Databases(client);
