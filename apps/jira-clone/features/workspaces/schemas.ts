@@ -19,3 +19,7 @@ export const updateWorkspaceSchema = z.object({
     ])
     .optional(),
 });
+
+export const validateInviteCodeSchema = z.object({
+  code: z.string(),
+});
