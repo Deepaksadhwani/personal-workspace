@@ -1,11 +1,10 @@
 import "server-only";
 
-import { Account, Client, Databases, ID, Storage } from "node-appwrite";
+import { Account, Client, Databases, ID, Storage, Users } from "node-appwrite";
 import type {
   AppwriteAdminClientTypes,
   AppwriteClientTypes,
   LoginUserAppwriteTypes,
-  createSessionClientTypes,
   createUserAppwriteTypes,
 } from "../types/global";
 
@@ -23,6 +22,9 @@ export async function createAppwriteAdminClient({
   return {
     get account() {
       return new Account(client);
+    },
+    get users() {
+      return new Users(client);
     },
   };
 }
