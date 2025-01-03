@@ -173,6 +173,25 @@ A full-stack Jira clone built with modern technologies.
       - Loading states during deletion
       - Success/Error notifications
 
+## Member Management Features
+
+### Member List
+- View all workspace members with their names, emails, and avatars
+- Clean interface with member cards separated by dividers
+- Back navigation to workspace view
+
+### Member Role Management
+- Administrators can modify member roles
+- Available roles:
+  - Administrator
+  - Member
+- Role changes are restricted to prevent removing the last administrator
+
+### Member Removal
+- Administrators can remove members from workspaces
+- Confirmation dialog before member removal
+- Safety check to prevent removing the last workspace member
+
 ## Getting Started
 
 1. Clone the repository:
