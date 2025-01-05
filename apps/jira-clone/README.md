@@ -240,6 +240,28 @@ A full-stack Jira clone built with modern technologies.
   - `ProjectAvatar`: Displays project image or fallback
   - Edit button for quick navigation to settings
 
+### Project Settings Features
+- **Project Editing**:
+  - Edit project name and image
+  - Protected routes with member authorization
+  - Form validation with Zod schemas
+  - Success/Error notifications
+  - Back navigation to project view
+
+- **Project Deletion**:
+  - Secure deletion with member authorization
+  - Success/Error notifications
+  - Automatic redirection after deletion
+  - Query cache invalidation
+
+- **API Integration**:
+  - New endpoints:
+    - `PATCH /api/projects/:projectId` - Update project
+    - `DELETE /api/projects/:projectId` - Delete project
+  - Member-based access control
+  - Image processing for uploads
+  - Automatic query invalidation
+
 ### Error & Loading States
   - Full-screen loading indicator with:
     - Animated spinner using Lucide icons
