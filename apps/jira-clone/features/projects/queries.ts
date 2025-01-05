@@ -13,7 +13,7 @@ interface GetPorjectProps {
 
 export const getProject = async ({ projectId }: GetPorjectProps) => {
   const session = (await cookies()).get(AUTH_COOKIE);
-  if (!session) return null;
+  if (!session) throw new Error("Unauthorized");
 
   const { databases, user } = await createAppwriteClient({
     endpoint: process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || "",

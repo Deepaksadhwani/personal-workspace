@@ -41,7 +41,7 @@ interface GetWorkspaceProps {
 
 export const getWorkspace = async ({ workspaceId }: GetWorkspaceProps) => {
   const session = (await cookies()).get(AUTH_COOKIE);
-  if (!session) return null;
+  if (!session) throw new Error("Unauthorized");
 
   const { databases, user } = await createAppwriteClient({
     endpoint: process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || "",
