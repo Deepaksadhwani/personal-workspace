@@ -1,5 +1,6 @@
 import { DottedSeprator } from "@/components/dotted-seprator";
 import { Navigation } from "@/components/navigation";
+import { Projects } from "@/components/project";
 import WorkspaceSwitcher from "@/components/workspace-switcher";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,12 +14,15 @@ export const Sidebar = () => {
       </Link>
       <DottedSeprator className="my-4" />
       <Suspense>
-        {" "}
         <WorkspaceSwitcher />
       </Suspense>
 
       <DottedSeprator className="my-4" />
       <Navigation />
+      <DottedSeprator className="my-4" />
+      <Suspense>
+        <Projects />
+      </Suspense>
     </aside>
   );
 };

@@ -173,6 +173,64 @@ A full-stack Jira clone built with modern technologies.
       - Loading states during deletion
       - Success/Error notifications
 
+## Projects Management Features
+
+### Project Creation
+- Create new projects within workspaces
+- Upload and preview project images
+- Form validation with Zod schemas
+- Real-time image preview functionality
+- Automatic project listing updates
+
+### Project Listing
+- View all projects within a workspace
+- Projects sorted by creation date
+- Secure access control based on workspace membership
+- Real-time updates using TanStack Query
+
+### Project Components
+- `CreateProjectModal`: Responsive modal for project creation
+- `CreateProjectForm`: Form component with:
+  - Project name input
+  - Image upload with preview
+  - Real-time validation
+  - Loading states
+  - Cancel/Submit actions
+
+### Project Architecture
+- **Route Handling**:
+  - Protected routes with session middleware
+  - Type-safe request validation using Zod
+  - Project data management with Appwrite
+
+- **Client Components**:
+  - Modal state management using URL parameters
+  - Form validation with Zod schemas
+  - Image preview and upload functionality
+  - Responsive UI adapting to desktop/mobile views
+
+- **API Integration**:
+  - TanStack Query for state management
+  - Automatic query invalidation
+  - Type-safe API implementations
+  - Real-time updates for project listing
+
+### Technical Implementation
+- **Client-Side**:
+  - Custom hooks for project management:
+    - `useCreateProject` - Handle project creation
+    - `useGetProjects` - Fetch workspace projects
+  - Automatic query invalidation on changes
+  - Toast notifications for success/error states
+  
+- **Server-Side**:
+  - Secure project creation endpoint
+  - Image processing and storage using Appwrite
+  - Protected routes with session middleware
+  - Project API Routes:
+    - `GET /api/projects` - Fetch workspace projects
+    - `POST /api/projects` - Create new project
+
 ## Member Management Features
 
 ### Member List

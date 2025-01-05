@@ -7,3 +7,4 @@ export const IMAGES_BUCKET_ID =
 export const appwriteEndpoint = process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || "";
 export const appwriteProjectId = process.env.NEXT_PUBLIC_APPWRITE_PROJECT || "";
 export const appwriteApiKey = process.env.NEXT_APPWRITE_KEY || "";
+export const PROJECTS_ID = process.env.NEXT_PUBLIC_APPWRITE_PROJECTS_ID || "";
