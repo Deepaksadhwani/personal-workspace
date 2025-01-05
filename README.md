@@ -7,6 +7,7 @@ This is the Personal Workspace monorepo, managed with [Turborepo](https://turbo.
 ```
 .
 ├── .commitlintrc.ts
+├── .github/
 │   └── workflows/
 │       └── ci.yml
 ├── .gitignore
