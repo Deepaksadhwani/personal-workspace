@@ -173,6 +173,7 @@ A full-stack Jira clone built with modern technologies.
       - Loading states during deletion
       - Success/Error notifications
 
+
 ## Projects Management Features
 
 ### Project Creation
@@ -230,6 +231,7 @@ A full-stack Jira clone built with modern technologies.
   - Project API Routes:
     - `GET /api/projects` - Fetch workspace projects
     - `POST /api/projects` - Create new project
+
 
 ## Member Management Features
 
