@@ -231,6 +231,35 @@ A full-stack Jira clone built with modern technologies.
     - `GET /api/projects` - Fetch workspace projects
     - `POST /api/projects` - Create new project
 
+### Project Detail Page
+- View detailed project information
+- Project header with name and avatar
+- Quick access to project settings
+- Protected routes with authentication
+- Components:
+  - `ProjectAvatar`: Displays project image or fallback
+  - Edit button for quick navigation to settings
+
+### Error & Loading States
+  - Full-screen loading indicator with:
+    - Animated spinner using Lucide icons
+    - Clean centered layout
+    - Subtle animation effects
+    - Consistent branding colors
+
+- **Error Handling System**:
+  - Features:
+    - User-friendly error presentation
+    - Navigation options to recover:
+      - "Back to home" action
+      - Clear error indicators
+    - Visual feedback with warning icons
+    - Error boundary catches:
+      - Runtime errors
+      - Network failures
+      - Authentication issues
+      - Server-side errors
+
 ## Member Management Features
 
 ### Member List
