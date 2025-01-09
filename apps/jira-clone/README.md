@@ -301,6 +301,65 @@ A full-stack Jira clone built with modern technologies.
 - Confirmation dialog before member removal
 - Safety check to prevent removing the last workspace member
 
+## Task Management Features
+
+### Task Views
+- Multiple view options:
+  - Table view for list-based task management
+  - Kanban view for drag-and-drop workflow
+  - Calendar view for timeline-based planning
+- Responsive view switcher with mobile support
+- Create new tasks from any view
+
+### Task API Features
+- **Endpoints**:
+  - `GET /api/tasks` - Fetch tasks with filtering options:
+    - Workspace filtering
+    - Project filtering
+    - Assignee filtering
+    - Status filtering
+    - Due date filtering
+    - Search by task name
+  - `POST /api/tasks` - Create new tasks with:
+    - Name and description
+    - Status assignment
+    - Project association
+    - Assignee selection
+    - Due date setting
+    - Automatic position calculation for ordering
+
+### Task Components
+- `TaskViewSwitcher`: Manages view transitions with:
+  - Tab-based navigation
+  - Quick task creation button
+  - Filter section
+  - View-specific content areas
+
+### Task Creation
+- Create new tasks with:
+  - Title and description
+  - Due date selection with date picker
+  - Project association
+  - Status assignment
+  - Workspace context awareness
+
+### Task API Integration
+- **Client-Side Hooks**:
+  - `useCreateTask` - Handles task creation with mutations
+  - `useGetTasks` - Fetches tasks with filtering
+  - `useCreateTaskModal` - Manages task creation modal state
+
+- **Components**:
+  - `CreateTaskModal` - Responsive modal for task creation
+  - `CreateTaskFormWrapper` - Form handling component
+  - `DatePicker` - Custom date selection component
+
+- **State Management**:
+  - URL-based modal state using nuqs
+  - TanStack Query for data fetching
+  - Automatic query invalidation on changes
+  - Toast notifications for success/error states
+
 ## Getting Started
 
 1. Clone the repository:

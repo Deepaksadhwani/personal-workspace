@@ -1,5 +1,6 @@
 import { MobileSidebar } from "@/components/mobile-sidebar";
 import { UserButton } from "@/features/auth/components/user-button";
+import { DatePicker } from "./ui/date-picker";
 
 export const Navbar = () => {
   return (
@@ -10,6 +11,7 @@ export const Navbar = () => {
           Monitor all of your projects and task here
         </p>
       </div>
+
       <MobileSidebar />
       <UserButton />
     </nav>
