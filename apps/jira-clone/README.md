@@ -303,6 +303,33 @@ A full-stack Jira clone built with modern technologies.
 
 ## Task Management Features
 
+### Task Filtering
+The application supports comprehensive task filtering with the following options:
+- Status filtering (Backlog, In Progress, In Review, Todo, Done)
+- Assignee filtering
+- Project filtering
+- Due date filtering
+- Search functionality
+
+### Task Views
+Tasks can be viewed in multiple formats:
+- Table View
+- Kanban Board
+- Calendar View
+
+### Key Components
+- `useTaskFilters`: Custom hook for managing task filter states
+- `TaskViewSwitcher`: Component for switching between different task views
+- `DataFilters`: Component providing filter controls for tasks
+
+## Implementation Details
+
+### Filter States
+Task filters are managed using URL query parameters, allowing for:
+- Shareable filtered views
+- Persistent filter state across page reloads
+- Clean URL-based state management
+
 ### Task Views
 - Multiple view options:
   - Table view for list-based task management

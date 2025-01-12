@@ -1,5 +1,4 @@
 import { TaskStatus } from "@/features/tasks/types";
-import { Description } from "@radix-ui/react-dialog";
 import { z } from "zod";
 
 export const createTaskSchema = z.object({
@@ -14,9 +13,9 @@ export const createTaskSchema = z.object({
 
 export const getTaskSchema = z.object({
   workspaceId: z.string(),
-  projectId: z.string(),
+  projectId: z.string().nullish(),
   assigneeId: z.string().nullish(),
-  status: z.nativeEnum(TaskStatus).nullable(),
-  dueDate: z.coerce.date().nullable(),
+  status: z.nativeEnum(TaskStatus).nullish(),
+  dueDate: z.string().nullish(),
   search: z.string().nullish(),
 });
