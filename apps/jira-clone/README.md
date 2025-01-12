@@ -5,7 +5,7 @@ A full-stack Jira clone built with modern technologies.
 ## Technologies Used
 
 - **Frontend**: Next.js with Tailwind CSS, Shadcn UI
-- **State Management**: TanStack Query
+- **State Management**: TanStack Query, Nuqs
 - **API Routing**: Hono.js
 - **Backend Services**: Appwrite
 
