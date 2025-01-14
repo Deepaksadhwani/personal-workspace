@@ -322,6 +322,44 @@ Tasks can be viewed in multiple formats:
 - `TaskViewSwitcher`: Component for switching between different task views
 - `DataFilters`: Component providing filter controls for tasks
 
+### Task Views and Interface
+- **Table View Implementation**:
+  - Sortable columns
+  - Pagination controls
+  - Text-based filtering
+  - Responsive table layout
+  - Custom cell renderers for different data types
+
+- **Task Date Display**:
+  - Color-coded due dates based on urgency:
+    - Red: 3 days or less
+    - Orange: Less than 7 days
+    - Yellow: 14 days or less
+    - Default color for longer periods
+
+- **Task Actions**:
+  - Dropdown menu for task operations
+  - Available actions:
+    - View task details
+    - Open associated project
+    - Edit task
+    - Delete task
+  - Permission-based action availability
+
+### Components Structure
+- **Core Components**:
+  - `TaskViewSwitcher`: Main view controller with tabs
+  - `DataTable`: Reusable table component with sorting and filtering
+  - `TaskDate`: Date display with status colors
+  - `TaskActions`: Action menu for task operations
+
+### View Features
+- Tab-based view switching Table
+- Loading states with spinner animation
+- Quick task creation button
+- Comprehensive filtering system
+- Responsive layout adaptations
+
 ## Implementation Details
 
 ### Filter States
