@@ -2,12 +2,55 @@
 
 A full-stack Jira clone built with modern technologies.
 
-## Technologies Used
+
+## 🛠️ Tech Stack
+
 
 - **Frontend**: Next.js with Tailwind CSS, Shadcn UI
 - **State Management**: TanStack Query, Nuqs
 - **API Routing**: Hono.js
 - **Backend Services**: Appwrite
+
+
+
+## 📦 Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Deepaksadhwani/personal-workspace.git
+   ```
+2. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+3. Navigate to the Jira Clone application:
+
+   ```bash
+   cd apps/jira-clone
+   ```
+
+4. Set up Appwrite:
+   - Create an Appwrite project
+   - Configure environment variables
+
+## Development
+
+1. **Development Server Configuration**:
+
+   - The server is pre-configured to run on **port 7000**.
+
+2. **Starting the Development Server**:
+
+   - Use the following command to start the project:
+     ```bash
+     pnpm run dev
+     ```
+
+3. **Access the Application**:
+   - Once the server is running, open your browser and navigate to:  
+     [http://localhost:7000](http://localhost:7000).
 
 ## Features
 
@@ -433,41 +476,3 @@ Task filters are managed using URL query parameters, allowing for:
   - Automatic query invalidation on changes
   - Toast notifications for success/error states
 
-## Getting Started
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Deepaksadhwani/personal-workspace.git
-   ```
-2. Install dependencies:
-
-   ```bash
-   pnpm install
-   ```
-
-3. Navigate to the Jira Clone application:
-
-   ```bash
-   cd apps/jira-clone
-   ```
-
-4. Set up Appwrite:
-   - Create an Appwrite project
-   - Configure environment variables
-
-## Development
-
-1. **Development Server Configuration**:
-
-   - The server is pre-configured to run on **port 7000**.
-
-2. **Starting the Development Server**:
-
-   - Use the following command to start the project:
-     ```bash
-     pnpm run dev
-     ```
-
-3. **Access the Application**:
-   - Once the server is running, open your browser and navigate to:  
-     [http://localhost:7000](http://localhost:7000).
