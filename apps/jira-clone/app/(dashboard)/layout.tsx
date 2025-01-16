@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Sidebar } from "@/components/sidebar";
 import { CreateProjectModal } from "@/features/projects/components/create-project-modal";
 import { CreateTaskModal } from "@/features/tasks/components/create-task-modal";
+import { EditTaskModal } from "@/features/tasks/components/edit-task-modal";
 import { CreateWorkspaceModal } from "@/features/workspaces/components/create-workspace-modal";
 import { Suspense } from "react";
 
@@ -16,6 +17,7 @@ const DashboardLayout = ({ children }: layoutProps) => {
         <CreateWorkspaceModal />
         <CreateProjectModal />
         <CreateTaskModal />
+        <EditTaskModal />
       </Suspense>
 
       <div className=" flex w-full h-full">
