@@ -43,7 +43,7 @@ export const EditProjectForm = ({
   const { mutate: deleteProject, isPending: isDeletingProject } =
     useDeleteProject();
 
-  const [DeleteDiealog, confirmDelete] = useConfirm(
+  const [DeleteDialog, confirmDelete] = useConfirm(
     "Delete Project",
     "This action can not be undone.",
     "destructive",
@@ -94,7 +94,7 @@ export const EditProjectForm = ({
 
   return (
     <div className="flex flex-col  gap-y-4">
-      <DeleteDiealog />
+      <DeleteDialog />
       <Card className="w-full h-full border-none shadow-none">
         <CardHeader className="flex p-7 gap-x-4 flex-row items-center space-y-0">
           <Button

@@ -45,7 +45,7 @@ export const EditWorkspaceForm = ({
     useResetInviteCode();
   const router = useRouter();
 
-  const [DeleteDiealog, confirmDelete] = useConfirm(
+  const [DeleteDialog, confirmDelete] = useConfirm(
     "Delete Workspace",
     "This action can not be undone.",
     "destructive",
@@ -114,7 +114,7 @@ export const EditWorkspaceForm = ({
 
   return (
     <div className="flex flex-col  gap-y-4">
-      <DeleteDiealog />
+      <DeleteDialog />
       <ResetDialog />
       <Card className="w-full h-full border-none shadow-none">
         <CardHeader className="flex p-7 gap-x-4 flex-row items-center space-y-0">

@@ -392,6 +392,9 @@ Task filters are managed using URL query parameters, allowing for:
     - Assignee selection
     - Due date setting
     - Automatic position calculation for ordering
+  - `DELETE /api/tasks/:taskId` - Delete task
+  - `PATCH /api/tasks/:taskId` - Update task
+  - `GET /api/tasks/:taskId` - Get single task
 
 ### Task Components
 - `TaskViewSwitcher`: Manages view transitions with:
@@ -413,10 +416,15 @@ Task filters are managed using URL query parameters, allowing for:
   - `useCreateTask` - Handles task creation with mutations
   - `useGetTasks` - Fetches tasks with filtering
   - `useCreateTaskModal` - Manages task creation modal state
+  - `useUpdateTasks` - Handle task updates
+  - `useDeleteTasks` - Handle task deletion
+  - `useGetTask` - Fetch single task data
 
 - **Components**:
   - `CreateTaskModal` - Responsive modal for task creation
   - `CreateTaskFormWrapper` - Form handling component
+  - `UpdateTaskModal` - Responsive modal for task updation
+  - `UpdateTaskFormWrapper` - Form handling component
   - `DatePicker` - Custom date selection component
 
 - **State Management**:
