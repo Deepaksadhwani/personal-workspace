@@ -2,6 +2,13 @@
 
 A full-stack Jira clone built with modern technologies.
 
+## Technologies Used
+
+- **Frontend**: Next.js with Tailwind CSS, Shadcn UI
+- **State Management**: TanStack Query, Nuqs
+- **API Routing**: Hono.js
+- **Backend Services**: Appwrite
+
 
 ## 🛠️ Tech Stack
 
@@ -10,8 +17,6 @@ A full-stack Jira clone built with modern technologies.
 - **State Management**: TanStack Query, Nuqs
 - **API Routing**: Hono.js
 - **Backend Services**: Appwrite
-
-
 
 ## 📦 Installation
 
@@ -51,6 +56,7 @@ A full-stack Jira clone built with modern technologies.
 3. **Access the Application**:
    - Once the server is running, open your browser and navigate to:  
      [http://localhost:7000](http://localhost:7000).
+
 
 ## Features
 
@@ -372,6 +378,20 @@ Tasks can be viewed in multiple formats:
   - Text-based filtering
   - Responsive table layout
   - Custom cell renderers for different data types
+
+- **Kanban View Implementation**:
+  - Drag and drop interface for task management
+  - Column-based status organization:
+    - Backlog
+    - Todo
+    - In Progress
+    - In Review
+    - Done
+  - Visual status indicators with color-coded icons
+  - Task count per status column
+  - Quick task creation from each column
+  - Automatic position sorting within columns
+  - Responsive horizontal scrolling for mobile
 
 - **Task Date Display**:
   - Color-coded due dates based on urgency:
