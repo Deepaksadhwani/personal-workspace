@@ -380,6 +380,38 @@ Tasks can be viewed in multiple formats:
   - Custom cell renderers for different data types
 
 - **Kanban View Implementation**:
+  - Advanced drag and drop interface using @hello-pangea/dnd
+  - Column-based status organization:
+    - Backlog
+    - Todo
+    - In Progress
+    - In Review
+    - Done
+  - Features:
+    - Real-time task position updates
+    - Automatic position calculation
+    - Drag between columns (status change)
+    - Drag within columns (reordering)
+    - Position constraints (1000-1,000,000)
+    - Optimistic UI updates
+    - Batch updates for efficiency
+  - Visual elements:
+    - Task count per column
+    - Task cards with:
+      - Title with ellipsis
+      - Assignee avatar
+      - Due date indicator
+      - Project information
+      - Action menu
+    - Column headers with status and count
+    - Smooth drag animations
+  - Mobile responsive:
+    - Horizontal scrolling
+    - Touch-friendly interactions
+    - Compact card layout
+
+### Task Views and Interface
+- **Kanban View Implementation**:
   - Drag and drop interface for task management
   - Column-based status organization:
     - Backlog
