@@ -410,20 +410,31 @@ Tasks can be viewed in multiple formats:
     - Touch-friendly interactions
     - Compact card layout
 
-### Task Views and Interface
-- **Kanban View Implementation**:
-  - Drag and drop interface for task management
-  - Column-based status organization:
-    - Backlog
-    - Todo
-    - In Progress
-    - In Review
-    - Done
-  - Visual status indicators with color-coded icons
-  - Task count per status column
-  - Quick task creation from each column
-  - Automatic position sorting within columns
-  - Responsive horizontal scrolling for mobile
+- **Calendar View Implementation**:
+  - Interactive month-based calendar using react-big-calendar
+  - Custom Components:
+    - `EventCard`: Dedicated component for task display showing:
+      - Task title
+      - Assignee avatar
+      - Project icon
+      - Status-based color indicators
+    - `CustomToolbar`: Enhanced navigation with:
+      - Previous/Next month controls
+      - Today button
+      - Current month/year display
+  - Features:
+    - Custom event rendering with card-based layout
+    - Status-based color coding for tasks
+    - Click-through navigation to task details
+    - Custom styling with CSS modules
+    - Task grouping by date
+    - Responsive calendar grid
+  - UX Improvements:
+    - Clean date header formatting
+    - Consistent spacing and layout
+    - Mobile-friendly view
+    - Interactive event cards
+    - Visual hierarchy with status colors
 
 - **Task Date Display**:
   - Color-coded due dates based on urgency:
