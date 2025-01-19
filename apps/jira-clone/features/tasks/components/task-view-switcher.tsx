@@ -5,17 +5,19 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useGetTasks } from "@/features/tasks/api/use-get-tasks";
 import { columns } from "@/features/tasks/components/colunms";
+import DataCalendar from "@/features/tasks/components/data-calendar";
 import { DataFilters } from "@/features/tasks/components/data-filters";
 import { DataKanban } from "@/features/tasks/components/data-kanban";
 import { DataTable } from "@/features/tasks/components/data-table";
 import { useCreateTaskModal } from "@/features/tasks/hooks/use-create-task-modal";
 import { useTaskFilters } from "@/features/tasks/hooks/use-task-filter";
+import type { TaskStatus } from "@/features/tasks/types";
 import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 import { Loader, PlusIcon } from "lucide-react";
 import { useQueryState } from "nuqs";
 import { useCallback } from "react";
 import { useBulkUpdateTask } from "../api/use-bulk-update-tasks";
-import type { TaskStatus } from "../types";
+import "@/features/tasks/components/data-calendar.css";
 
 export const TaskViewSwitcher = () => {
   const [{ status, assigneeId, projectId, dueDate }] = useTaskFilters();
@@ -84,8 +86,8 @@ export const TaskViewSwitcher = () => {
                 tasks={tasks?.documents ?? []}
               />
             </TabsContent>
-            <TabsContent value="calender" className="mt-0">
-              {JSON.stringify(tasks)}
+            <TabsContent value="calender" className="mt-0 h-full pb-4 ">
+              <DataCalendar data={tasks?.documents ?? []} />
             </TabsContent>
           </>
         )}
