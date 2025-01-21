@@ -222,6 +222,31 @@ A full-stack Jira clone built with modern technologies.
       - Loading states during deletion
       - Success/Error notifications
 
+### Workspace Management
+
+- **Core Features**:
+  - Create, edit, and delete workspaces
+  - Workspace settings management
+  - Member role management
+  - Invite code system
+  - Image upload and preview
+
+- **API Integration**:
+  - **Workspace Queries**:
+    - `useGetWorkSpaces()`: List all user workspaces
+    - `useGetWorkspace()`: Get single workspace details
+    - `useGetWorkspaceInfo()`: Get workspace summary info
+  
+  - **Server Endpoints**:
+    - `GET /api/workspaces`: List workspaces
+    - `GET /api/workspaces/:id`: Get workspace details
+    - `GET /api/workspaces/:id/info`: Get workspace info
+    - `POST /api/workspaces`: Create workspace
+    - `PATCH /api/workspaces/:id`: Update workspace
+    - `DELETE /api/workspaces/:id`: Delete workspace
+    - `POST /api/workspaces/:id/reset-invite-code`: Reset invite code
+    - `POST /api/workspaces/:id/join`: Join workspace with invite code
+
 ## Projects Management Features
 
 ### Project Creation

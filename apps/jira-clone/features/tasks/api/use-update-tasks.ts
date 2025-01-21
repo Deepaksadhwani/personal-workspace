@@ -1,7 +1,6 @@
 import { client } from "@/lib/rpc";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import type { InferRequestType, InferResponseType } from "hono";
-import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
 // Extract response and request types from the login endpoint
@@ -15,8 +14,6 @@ type RequestType = InferRequestType<
 
 export const useUpdateTask = () => {
   const queryClient = useQueryClient();
-  const router = useRouter();
-
   const mutation = useMutation<ResponseType, Error, RequestType>({
     mutationFn: async ({ json, param }) => {
       const response = await client.api.tasks[":taskId"].$patch({
@@ -32,7 +29,6 @@ export const useUpdateTask = () => {
     },
     onSuccess: ({ data }) => {
       toast.success("task updated successfully");
-      router.refresh();
       queryClient.invalidateQueries({ queryKey: ["tasks"] });
       queryClient.invalidateQueries({ queryKey: ["task", data.$id] });
     },
