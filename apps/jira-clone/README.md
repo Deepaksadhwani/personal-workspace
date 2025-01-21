@@ -466,6 +466,37 @@ Tasks can be viewed in multiple formats:
 - Comprehensive filtering system
 - Responsive layout adaptations
 
+### Task Details Features
+- **Task Overview**:
+  - Task title and project context
+  - Task description with inline editing
+  - Task status and due date display
+  - Assignee information
+  - Delete task functionality with confirmation
+
+- **Task Components**:
+  - `TaskOverview`: Displays task metadata with:
+    - Assignee information
+    - Due date with status colors
+    - Current status badge
+    - Quick edit button
+  - `TaskDescription`: Rich text description with:
+    - Inline editing capability
+    - Save/cancel actions
+    - Loading states
+  - `TaskBreadcrumbs`: Navigation context showing:
+    - Project link with avatar
+    - Task name
+    - Delete task button
+  
+- **Implementation Details**:
+  - Protected routes with task ID validation
+  - Real-time updates using TanStack Query
+  - Responsive layout for mobile/desktop
+  - Optimistic updates for description changes
+  - Delete confirmation dialog
+  - Navigation back to task list after deletion
+
 ## Implementation Details
 
 ### Filter States
