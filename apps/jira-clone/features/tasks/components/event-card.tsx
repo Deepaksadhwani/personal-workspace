@@ -1,4 +1,5 @@
 import { MemberAvatar } from "@/features/members/components/member-avatar";
+import type { Member } from "@/features/members/types";
 import { ProjectAvatar } from "@/features/projects/components/project-avatar";
 import type { Project } from "@/features/projects/types";
 import { TaskStatus } from "@/features/tasks/types";
@@ -8,8 +9,7 @@ import { useRouter } from "next/navigation";
 
 interface EventCardProps {
   title: string;
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  assignee: any;
+  assignee: Member;
   project: Project;
   status: TaskStatus;
   id: string;

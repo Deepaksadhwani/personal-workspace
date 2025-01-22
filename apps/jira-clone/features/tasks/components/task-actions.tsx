@@ -4,7 +4,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useDeleteTask } from "@/features/tasks/api/use-delete-tasks";
+import { useDeleteTask } from "@/features/tasks/api/use-delete-task";
 import { useEditTaskModal } from "@/features/tasks/hooks/use-edit-task-modal";
 import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 import { useConfirm } from "@/hooks/use-confirm";

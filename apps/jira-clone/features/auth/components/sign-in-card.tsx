@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useLogin } from "@/features/auth/api/use-login";
 import { loginSchema } from "@/features/auth/schemas";
+import { signUpWithGithub, signUpWithGoogle } from "@/lib/oauth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
@@ -89,6 +90,7 @@ export const SignInCard = () => {
       </div>
       <CardContent className="p-7 flex flex-col gap-y-4">
         <Button
+          onClick={() => signUpWithGoogle()}
           variant={"secondary"}
           size={"lg"}
           className="w-full"
@@ -98,6 +100,7 @@ export const SignInCard = () => {
           Login with Google
         </Button>
         <Button
+          onClick={() => signUpWithGithub()}
           variant={"secondary"}
           size={"lg"}
           className="w-full"
