@@ -13,7 +13,7 @@ export const useGetProject = ({ projectId }: UseGetProjectProps) => {
         param: { projectId },
       });
       if (!response.ok) {
-        throw new Error("Failed to fetch projec");
+        throw new Error("Failed to fetch project");
       }
       const { data } = await response.json();
       return data;

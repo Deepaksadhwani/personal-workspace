@@ -247,6 +247,45 @@ A full-stack Jira clone built with modern technologies.
     - `POST /api/workspaces/:id/reset-invite-code`: Reset invite code
     - `POST /api/workspaces/:id/join`: Join workspace with invite code
 
+### Workspace Analytics
+
+- **Analytics Dashboard**:
+  - Task statistics overview with:
+    - Total task count with monthly comparison
+    - Assigned tasks metrics
+    - Completed tasks tracking
+    - Incomplete tasks monitoring
+    - Overdue tasks analysis
+  - Real-time updates via TanStack Query
+  - Month-to-month comparison metrics
+  - Visual trend indicators
+
+- **Implementation Details**:
+  - Custom hooks for analytics:
+    - `useGetWorkspaceAnalytics` - Fetch workspace analytics data
+  - API Integration:
+    - `GET /api/workspaces/:workspaceId/analytics` endpoint
+    - Type-safe response handling
+    - Date-based filtering for monthly comparisons
+  - Components:
+    - Analytics dashboard with responsive layout
+    - Task metrics cards with trend indicators
+    - Projects and members overview
+    - Quick action buttons for task/project creation
+
+- **Dashboard Features**:
+  - Task list with:
+    - Task name and project context
+    - Due date indicators
+    - Quick navigation to task details
+  - Project grid showing:
+    - Project avatars and names
+    - Quick access to project pages
+  - Member overview with:
+    - Member avatars and names
+    - Role indicators
+    - Quick access to member settings
+
 ## Projects Management Features
 
 ### Project Creation
@@ -335,6 +374,43 @@ A full-stack Jira clone built with modern technologies.
   - Member-based access control
   - Image processing for uploads
   - Automatic query invalidation
+
+### Project Analytics
+- **Core Features**:
+  - Monthly task analytics dashboard
+  - Comparison with previous month's metrics
+  - Real-time data updates
+  - Responsive scrollable interface
+
+- **Analytics Metrics**:
+  - Total tasks count and trend
+  - Assigned tasks statistics
+  - Completed tasks tracking
+  - Overdue tasks monitoring
+  - Incomplete tasks analysis
+
+- **Components**:
+  - `Analytics`: Main analytics dashboard with:
+    - Horizontal scrollable interface
+    - Responsive card layout
+    - Visual trend indicators
+  - `AnalyticsCard`: Metric display card with:
+    - Title and value presentation
+    - Trend direction indicators (up/down)
+    - Color-coded status indicators
+    - Comparative difference display
+
+- **API Integration**:
+  - **Analytics Queries**:
+    - `useGetProjectAnalytics()`: Fetch project analytics data
+    - Type-safe response handling with Hono types
+  
+  - **Server Endpoints**:
+    - `GET /api/projects/:projectId/analytics`: Get project analytics with:
+      - Current month metrics
+      - Previous month comparison
+      - Task status breakdowns
+      - Performance trends
 
 ### Error & Loading States
   - Full-screen loading indicator with:
