@@ -62,6 +62,32 @@ A full-stack Jira clone built with modern technologies.
 
 - **Authentication System**:
 
+  - **OAuth Integration**:
+    - **Supported Providers**:
+      - Google OAuth
+      - GitHub OAuth
+    
+    - **Implementation Details**:
+      - Configured through Appwrite Dashboard
+      - Secure callback URL handling
+      - Automatic user profile creation
+      - Profile picture sync from OAuth providers
+    
+    - **Client-Side Features**:
+      - OAuth login buttons with provider icons
+      - Loading states during authentication
+      - Automatic redirect handling
+      - Error handling for failed OAuth attempts
+    
+    - **Setup Steps**:
+      1. Configure OAuth providers in Appwrite Console:
+         - Add authorized domains
+         - Set up OAuth client IDs and secrets
+         - Configure callback URLs
+      2. Enable OAuth methods in project settings
+      3. Implement OAuth buttons in login UI
+      4. Handle OAuth callbacks in application
+
   - **Client-Side Features**:
 
     - Protected routes with automatic redirection

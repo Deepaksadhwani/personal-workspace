@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/select";
 import { MemberAvatar } from "@/features/members/components/member-avatar";
 import { ProjectAvatar } from "@/features/projects/components/project-avatar";
-import { useUpdateTask } from "@/features/tasks/api/use-update-tasks";
+import { useUpdateTask } from "@/features/tasks/api/use-update-task";
 import { createTaskSchema } from "@/features/tasks/schemas";
 import { type Task, TaskStatus } from "@/features/tasks/types";
 import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
