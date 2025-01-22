@@ -1,6 +1,6 @@
+import { ProjectIdSettingsClient } from "@/app/(standalone)/workspaces/[workspaceId]/projects/[projectId]/settings/client";
 import { getCurrent } from "@/features/auth/queries";
 import { redirect } from "next/navigation";
-import { ProjectIdSettingsClient } from "./client";
 
 const ProjectIdSettingPage = async () => {
   const user = await getCurrent();

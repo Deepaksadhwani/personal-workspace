@@ -1,3 +1,4 @@
+import { KanbanCard } from "@/features/tasks/components/kanban-card";
 import KanbanColumnHeader from "@/features/tasks/components/kanban-column-header";
 import { type Task, TaskStatus } from "@/features/tasks/types";
 import {
@@ -7,7 +8,6 @@ import {
   Droppable,
 } from "@hello-pangea/dnd";
 import { useCallback, useEffect, useState } from "react";
-import { KanbanCard } from "./kanban-card";
 
 interface DataKanbanProps {
   tasks: Task[];

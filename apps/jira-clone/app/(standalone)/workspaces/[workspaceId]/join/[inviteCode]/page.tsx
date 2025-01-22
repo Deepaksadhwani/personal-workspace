@@ -1,6 +1,6 @@
+import { WorkspaceIdJoinClient } from "@/app/(standalone)/workspaces/[workspaceId]/join/[inviteCode]/client";
 import { getCurrent } from "@/features/auth/queries";
 import { redirect } from "next/navigation";
-import { WorkspaceIdJoinClient } from "./client";
 
 const WorkspaceIdJoinPage = async () => {
   const user = await getCurrent();

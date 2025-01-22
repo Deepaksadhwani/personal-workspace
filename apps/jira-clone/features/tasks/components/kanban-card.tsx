@@ -1,10 +1,10 @@
 import { DottedSeprator } from "@/components/dotted-seprator";
 import { MemberAvatar } from "@/features/members/components/member-avatar";
 import { ProjectAvatar } from "@/features/projects/components/project-avatar";
+import { TaskActions } from "@/features/tasks/components/task-actions";
+import { TaskDate } from "@/features/tasks/components/task-date";
 import type { Task } from "@/features/tasks/types";
 import { MoreHorizontal } from "lucide-react";
-import { TaskActions } from "./task-actions";
-import { TaskDate } from "./task-date";
 
 interface KanbanCardProps {
   task: Task;

@@ -2,7 +2,7 @@
 
 import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 import { cn } from "@/lib/utils";
-import { SettingsIcon, User, UserIcon } from "lucide-react";
+import { SettingsIcon, UserIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { GoHome, GoHomeFill } from "react-icons/go";

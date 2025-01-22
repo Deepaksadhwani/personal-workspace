@@ -1,5 +1,6 @@
 "use client";
 
+import { PageLoader } from "@/components/page-loader";
 import {
   Select,
   SelectContent,
@@ -15,7 +16,7 @@ import { useRouter } from "next/navigation";
 import { RiAddCircleFill } from "react-icons/ri";
 
 export default function WorkspaceSwitcher() {
-  const { data: workspaces, isPending } = useGetWorkSpaces();
+  const { data: workspaces, isLoading } = useGetWorkSpaces();
   const workspaceId = useWorkspaceId();
   const router = useRouter();
   const { open } = useCreateWorkspaceModal();
@@ -23,6 +24,8 @@ export default function WorkspaceSwitcher() {
   const onSelect = (workspaceId: string) => {
     router.push(`/workspaces/${workspaceId}`);
   };
+
+  if (isLoading) <PageLoader />;
 
   return (
     <div className="flex flex-col gap-y-2">

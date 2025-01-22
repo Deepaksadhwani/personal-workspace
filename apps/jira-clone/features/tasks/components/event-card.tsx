@@ -1,10 +1,10 @@
 import { MemberAvatar } from "@/features/members/components/member-avatar";
 import { ProjectAvatar } from "@/features/projects/components/project-avatar";
 import type { Project } from "@/features/projects/types";
+import { TaskStatus } from "@/features/tasks/types";
 import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
-import { TaskStatus } from "../types";
 
 interface EventCardProps {
   title: string;

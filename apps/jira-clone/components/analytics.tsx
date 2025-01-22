@@ -1,6 +1,6 @@
+import { AnalyticsCard } from "@/components/analytics-card";
+import { DottedSeprator } from "@/components/dotted-seprator";
 import type { ProjectAnalyticsResponseType } from "@/features/projects/api/use-get-project-analytics";
-import { AnalyticsCard } from "./analytics-card";
-import { DottedSeprator } from "./dotted-seprator";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 
 const Analytics = ({ data }: ProjectAnalyticsResponseType) => {
