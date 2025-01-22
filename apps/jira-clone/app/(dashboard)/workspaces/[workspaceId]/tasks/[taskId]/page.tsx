@@ -1,6 +1,6 @@
+import { TaskIdClient } from "@/app/(dashboard)/workspaces/[workspaceId]/tasks/[taskId]/client";
 import { getCurrent } from "@/features/auth/queries";
 import { redirect } from "next/navigation";
-import { TaskIdClient } from "./client";
 
 const TaskIdPage = async () => {
   const user = await getCurrent();

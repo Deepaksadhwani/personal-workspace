@@ -1,6 +1,6 @@
+import WorkspaceIdSettingsClient from "@/app/(standalone)/workspaces/[workspaceId]/settings/client";
 import { getCurrent } from "@/features/auth/queries";
 import { redirect } from "next/navigation";
-import WorkspaceIdSettingsClient from "./client";
 
 const WorkspaceIdSettingPage = async () => {
   const user = await getCurrent();

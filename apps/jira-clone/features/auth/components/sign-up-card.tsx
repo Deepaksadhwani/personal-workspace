@@ -19,13 +19,13 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useRegister } from "@/features/auth/api/use-register";
+import { registerSchema } from "@/features/auth/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import type { z } from "zod";
-import { registerSchema } from "../schemas";
 
 export const SignUpCard = () => {
   const { mutate, isPending } = useRegister();

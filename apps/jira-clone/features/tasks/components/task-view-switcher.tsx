@@ -3,6 +3,7 @@
 import { DottedSeprator } from "@/components/dotted-seprator";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useBulkUpdateTask } from "@/features/tasks/api/use-bulk-update-tasks";
 import { useGetTasks } from "@/features/tasks/api/use-get-tasks";
 import { columns } from "@/features/tasks/components/colunms";
 import DataCalendar from "@/features/tasks/components/data-calendar";
@@ -16,8 +17,8 @@ import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 import { Loader, PlusIcon } from "lucide-react";
 import { useQueryState } from "nuqs";
 import { useCallback } from "react";
-import { useBulkUpdateTask } from "../api/use-bulk-update-tasks";
 import "@/features/tasks/components/data-calendar.css";
+import { useProjectId } from "@/features/projects/hooks/use-project-id";
 
 interface TaskViewSwitcherProps {
   hideProjectFilter?: boolean;
@@ -31,11 +32,11 @@ export const TaskViewSwitcher = ({
     defaultValue: "table",
   });
   const workspaceId = useWorkspaceId();
-
+  const paramProjectId = useProjectId();
   const { mutate: bulkUpdate } = useBulkUpdateTask();
   const { data: tasks, isLoading: isLoadingTasks } = useGetTasks({
     workspaceId,
-    projectId,
+    projectId: paramProjectId || projectId,
     assigneeId,
     status,
     dueDate,
