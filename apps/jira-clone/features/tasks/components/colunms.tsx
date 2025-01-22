@@ -48,14 +48,14 @@ export const columns: ColumnDef<Task>[] = [
       const project = row.original.project;
 
       return (
-        <p className="flex items-center gap-x-2 text-sm font-medium">
+        <div className="flex items-center gap-x-2 text-sm font-medium">
           <ProjectAvatar
             className="size-6"
             name={project.name}
             image={project.imageUrl}
           />
           <p className="line-clamp-1">{project.name}</p>
-        </p>
+        </div>
       );
     },
   },
@@ -76,7 +76,7 @@ export const columns: ColumnDef<Task>[] = [
       const assignee = row.original.assignee;
 
       return (
-        <p className="flex items-center gap-x-2 text-sm font-medium">
+        <div className="flex items-center gap-x-2 text-sm font-medium">
           <MemberAvatar
             fallbackClassName="text-xs"
             className="size-6"
@@ -84,7 +84,7 @@ export const columns: ColumnDef<Task>[] = [
             image={assignee.imageUrl}
           />
           <p className="line-clamp-1">{assignee.name}</p>
-        </p>
+        </div>
       );
     },
   },
