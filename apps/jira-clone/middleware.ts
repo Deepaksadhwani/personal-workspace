@@ -1,11 +1,13 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-const allowedOrigins = ["http://localhost:7000"];
+const allowedOrigins = [
+  "http://localhost:7000",
+  "https://deepak-jira-clone.vercel.app",
+];
 
 const corsOptions = {
   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
-  "Access-Control-Allow-Origin": "http://localhost:7000",
 };
 
 export function middleware(request: NextRequest) {
