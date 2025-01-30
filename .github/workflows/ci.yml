@@ -13,7 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        app: [apps/jira-clone] #  example to add: [apps/jira-clone, apps/admin] Single app for now; add more later
+        app: [
+            apps/jira-clone,
+            apps/aura-chat-app/client,
+            apps/aura-chat-app/server,
+          ] 
       fail-fast: false
 
     steps:
@@ -26,13 +30,13 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 8 # specify the pnpm version
-         
+
       # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 22 # Specify your Node.js version
-          
+
       # Install dependencies
       - name: Install dependencies
         run: pnpm install
