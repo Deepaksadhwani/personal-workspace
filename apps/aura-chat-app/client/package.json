@@ -6,7 +6,7 @@
     "dev": "next dev --port 7001",
     "build": "next build",
     "start": "next start",
-    "lint": "biome check --config-path=../../biome.json . && next lint"
+    "lint": "biome check --config-path=../../../biome.json . && next lint"
   },
   "dependencies": {
     "personal-workspace/ui": "workspace:*"
