@@ -20,7 +20,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
-    "personal-workspace/ui": "workspace:*"
+    "personal-workspace/ui": "workspace:*",
+    "prisma": "^6.3.0"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
@@ -29,8 +30,8 @@
     "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^22.4.1",
     "nodemon": "^3.1.4",
-    "ts-node": "^10.9.2",
     "personal-workspace/eslint-config": "workspace:*",
-    "personal-workspace/typescript-config": "workspace:*"
+    "personal-workspace/typescript-config": "workspace:*",
+    "ts-node": "^10.9.2"
   }
 }

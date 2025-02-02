@@ -13,7 +13,11 @@ This is the Personal Workspace monorepo, managed with [Turborepo](https://turbo.
 ├── .gitignore
 ├── .npmrc
 ├── apps/
+|   ├── aura-chat-app/
+|   |   ├── client/
+│   |   └── server/ 
 │   └── jira clone/
+|    
 ├── biome.json
 ├── lefthook.yml
 ├── package.json
