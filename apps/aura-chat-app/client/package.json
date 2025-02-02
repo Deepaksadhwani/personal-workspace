@@ -9,6 +9,7 @@
     "lint": "biome check --config-path=../../../biome.json . && next lint"
   },
   "dependencies": {
+    "next-auth": "^4.24.11",
     "personal-workspace/ui": "workspace:*"
   },
   "devDependencies": {
