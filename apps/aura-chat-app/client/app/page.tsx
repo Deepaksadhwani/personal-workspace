@@ -7,9 +7,7 @@ import Footer from "@/components/base/footer";
 import HeroSection from "@/components/base/hero-section";
 import Navbar from "@/components/base/navbar";
 import UserReviews from "@/components/base/user-reviews";
-import { Button } from "@/components/ui/button";
 import { getServerSession } from "next-auth";
-import Image from "next/image";
 
 export default async function Home() {
   const session: CustomSession | null = await getServerSession(authOptions);

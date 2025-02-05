@@ -1,5 +1,7 @@
+import { LOGIN_ENDPOINT } from "@/lib/api-endpoint";
 import type { CustomUser } from "@/types/global";
-import type { AuthOptions, ISODateString } from "next-auth";
+import axios from "axios";
+import type { Account, AuthOptions, ISODateString } from "next-auth";
 import type { JWT } from "next-auth/jwt";
 import GoogleProvider from "next-auth/providers/google";
 
@@ -13,24 +15,40 @@ export const authOptions: AuthOptions = {
     signIn: "/",
   },
   callbacks: {
-    async signIn({ user, account }) {
-      console.log("The user data isd", user);
-      return true;
+    async signIn({
+      user,
+      account,
+    }: {
+      user: CustomUser;
+      account: Account | null;
+    }) {
+      try {
+        const payload = {
+          email: user.email,
+          name: user.name,
+          oauth_id: account?.providerAccountId,
+          provider: account?.provider,
+          image: user?.image,
+        };
+        const { data } = await axios.post(LOGIN_ENDPOINT, payload);
+        user.id = data?.user?.id.toString();
+        user.token = data?.user?.token;
+        user.provider = data?.user?.provider;
+
+        return true;
+      } catch (error) {
+        return false;
+      }
     },
 
-    async session({
-      session,
-      user,
-      token,
-    }: {
-      session: CustomSession;
-      user: CustomUser;
-      token: JWT;
-    }) {
-      session.user = user as CustomUser;
+    async session({ session, token }: { session: CustomSession; token: JWT }) {
+      if (token.user) {
+        session.user = token.user as CustomUser;
+      }
       return session;
     },
-    async jwt({ token, user }) {
+
+    async jwt({ token, user, account }) {
       if (user) {
         token.user = user;
       }
