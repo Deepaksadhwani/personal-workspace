@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
     res.status(500).send("Internal server found.");
   }
 });
-app.use("/api/v1", rootRouter);
+app.use("/api", rootRouter);
 app.listen(process.env.PORT, () => {
   console.log(`server is running on port ${process.env.PORT}`);
 });

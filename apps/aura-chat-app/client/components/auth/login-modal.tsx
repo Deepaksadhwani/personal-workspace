@@ -7,9 +7,14 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { signIn } from "next-auth/react";
 import Image from "next/image";
 
 export default function LoginModal() {
+  const handleLogin = async () => {
+    signIn("google", { callbackUrl: "/dashboard", redirect: true });
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -23,7 +28,7 @@ export default function LoginModal() {
             conversations in seconds.
           </DialogDescription>
         </DialogHeader>
-        <Button variant="outline">
+        <Button variant="outline" onClick={handleLogin}>
           <Image
             src="/images/google.png"
             alt="google logo"
