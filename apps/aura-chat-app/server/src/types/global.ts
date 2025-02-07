@@ -5,3 +5,15 @@ export interface LoginPayLoadType {
   oauth_id: string;
   image?: string;
 }
+
+export interface JwtPayload {
+  id: number;
+  name: string;
+  email: string;
+}
+
+export interface ChatGroup {
+  user_id: number;
+  title: string;
+  passcode: string;
+}

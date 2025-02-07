@@ -11,6 +11,7 @@ export default async function Dashboard() {
 
   return (
     <div>
+      <p>{JSON.stringify(session)}</p>
       <DashboardNavbar
         name={session?.user?.name || ""}
         image={session?.user?.image || ""}

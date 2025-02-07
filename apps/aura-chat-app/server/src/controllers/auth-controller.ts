@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import { findUser } from "../services/users";
-import type { LoginPayLoadType } from "../types/global";
+import type { JwtPayload, LoginPayLoadType } from "../types/global";
 
 export const loginController = async (req: Request, res: Response) => {
   try {
@@ -12,7 +12,7 @@ export const loginController = async (req: Request, res: Response) => {
       name: body.name,
       email: body.email,
       id: user.id,
-    };
+    } as JwtPayload;
 
     if (!process.env.JWT_SECRET) {
       throw new Error("JWT_SECRET is not defined");
