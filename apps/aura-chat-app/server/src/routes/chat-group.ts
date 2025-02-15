@@ -11,7 +11,7 @@ import authMiddleware from "../middlewares/auth-middleware";
 export const chatGroupRouter = express.Router();
 
 chatGroupRouter.get("/chat-group", authMiddleware, findChatGroupsController);
-chatGroupRouter.get("/chat-group/:id", authMiddleware, findChatGroupController);
+chatGroupRouter.get("/chat-group/:id", findChatGroupController);
 chatGroupRouter.post("/chat-group", authMiddleware, createChatGroupcontroller);
 chatGroupRouter.put(
   "/chat-group/:id",

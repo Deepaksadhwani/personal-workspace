@@ -1,17 +1,12 @@
 import {
+  CHATS_ENDPOINT,
   CHAT_GROUP_ENDPOINT,
   CHAT_GROUP_USERS_ENDPOINT,
 } from "@/lib/api-endpoint";
 
-export async function fetchChatGroups(token: string) {
-  const res = await fetch(CHAT_GROUP_ENDPOINT, {
-    headers: {
-      Authorization: token,
-    },
-    next: {
-      revalidate: 60 * 60,
-      tags: ["dashboard"],
-    },
+export async function fetchChats(groupId: string) {
+  const res = await fetch(`${CHATS_ENDPOINT}/${groupId}`, {
+    cache: "no-cache",
   });
 
   if (!res.ok) {
