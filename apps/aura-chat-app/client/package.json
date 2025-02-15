@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "next-auth": "^4.24.11",
-    "personal-workspace/ui": "workspace:*"
+    "personal-workspace/ui": "workspace:*",
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
     "personal-workspace/eslint-config": "workspace:*",

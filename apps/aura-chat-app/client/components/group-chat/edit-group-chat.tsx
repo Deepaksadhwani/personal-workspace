@@ -56,7 +56,6 @@ export default function EditGroupChat({
   }, [group]);
 
   const onSubmit = async (payload: createChatType) => {
-    // console.log("The payload is", payload);
     try {
       setLoading(true);
       const { data } = await axios.put(
